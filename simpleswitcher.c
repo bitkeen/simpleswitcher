@@ -741,6 +741,8 @@ int menu(char **lines, char **input, char *prompt, int selected, Time *time)
 
 				else
 				if (key == XK_Escape
+					|| (key == XK_c && ev.xkey.state & ControlMask)
+					|| (key == XK_bracketleft && ev.xkey.state & ControlMask)
 					// pressing one of the global key bindings closes the switcher. this allows fast closing of the menu if an item is not selected
 					|| ((all_windows_modmask == AnyModifier || ev.xkey.state & all_windows_modmask) && key == all_windows_keysym
 						&& ! HASMODKEYS(all_windows_modifiers))
