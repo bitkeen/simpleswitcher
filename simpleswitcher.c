@@ -761,12 +761,20 @@ int menu(char **lines, char **input, char *prompt, int selected, Time *time)
 
 				else
 				// Up or Shift-Tab
-				if (key == XK_Up || (key == XK_Tab && ev.xkey.state & ShiftMask))
+				if (key == XK_Up
+					|| (key == XK_Tab && ev.xkey.state & ShiftMask)
+					|| (key == XK_p && ev.xkey.state & ControlMask)
+					|| (key == XK_k && ev.xkey.state & ControlMask)
+				   )
 					selected = selected ? MAX(0, selected-1): MAX(0, filtered_lines-1);
 
 				else
 				// Down or Tab
-				if (key == XK_Down || key == XK_Tab)
+				if (key == XK_Down
+					|| key == XK_Tab
+					|| (key == XK_n && ev.xkey.state & ControlMask)
+					|| (key == XK_j && ev.xkey.state & ControlMask)
+				   )
 					selected = selected < filtered_lines-1 ? MIN(filtered_lines-1, selected+1): 0;
 			}
 			menu_draw(text, boxes, max_lines, selected, filtered);
