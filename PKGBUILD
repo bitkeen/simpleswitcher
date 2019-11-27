@@ -5,13 +5,13 @@ pkgver=20120625
 pkgrel=1
 pkgdesc="simple EWMH window switcher"
 arch=('i686' 'x86_64')
-url="http://github.com/seanpringle/simpleswitcher"
+url="http://github.com/bitkeen/simpleswitcher"
 license=('MIT')
 depends=('libx11' 'libxft' 'freetype2' 'libxres')
 makedepends=('git')
 provides=('simpleswitcher')
 
-_gitroot="git://github.com/seanpringle/simpleswitcher.git"
+_gitroot="git://github.com/bitkeen/simpleswitcher.git"
 _gitname="simpleswitcher"
 
 build() {
